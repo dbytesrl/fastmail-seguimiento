@@ -1,0 +1,18 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_FORMSPREE_ENDPOINT": {
+      "description": "URL endpoint de Formspree para envío de formularios",
+      "required": false
+    }
+  },
+  "regions": ["syd1"],
+  "git": {
+    "deploymentEnabled": {
+      "main": true
+    }
+  }
+}

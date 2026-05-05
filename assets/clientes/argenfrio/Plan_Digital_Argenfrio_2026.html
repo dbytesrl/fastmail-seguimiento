@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Digital Argenfrío 2026 — Boreal Marketing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', Arial, sans-serif; background: #F0F0F8; color: #111; font-size: 15px; line-height: 1.7; }
+
+    :root {
+      --v: #3300CC; --c: #12BDFF; --r: #FE67B4;
+      --bl: #FFFFFF; --bk: #000000; --g: #F5F5F5; --gt: #333333;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── PORTADA ── */
+    .cover {
+      background: var(--v);
+      padding: 80px 32px 64px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cover::before {
+      content: ''; position: absolute; top: -160px; right: -160px;
+      width: 520px; height: 520px; background: var(--c); opacity: .06; border-radius: 50%;
+    }
+    .cover::after {
+      content: ''; position: absolute; bottom: -100px; left: -100px;
+      width: 380px; height: 380px; background: var(--r); opacity: .07; border-radius: 50%;
+    }
+    .cover img { width: 180px; margin-bottom: 44px; position: relative; z-index: 1; }
+    .cover-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--c); margin-bottom: 16px; position: relative; z-index: 1;
+    }
+    .cover h1 {
+      font-size: clamp(30px, 5vw, 52px); font-weight: 900; color: var(--r);
+      line-height: 1.1; margin-bottom: 14px; position: relative; z-index: 1;
+    }
+    .cover-sub {
+      font-size: clamp(15px, 2vw, 20px); font-weight: 600; color: rgba(255,255,255,.85);
+      margin-bottom: 48px; position: relative; z-index: 1;
+    }
+    .cover-bar {
+      width: 56px; height: 4px;
+      background: linear-gradient(90deg, var(--c), var(--r));
+      border-radius: 2px; margin: 0 auto 44px; position: relative; z-index: 1;
+    }
+    .cover-pills {
+      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+      position: relative; z-index: 1;
+    }
+    .pill {
+      padding: 8px 20px; border-radius: 30px; font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .pill-c { background: var(--c); color: var(--v); }
+    .pill-r { background: var(--r); color: var(--bl); }
+    .pill-o { background: rgba(255,255,255,.12); color: var(--bl); border: 1px solid rgba(255,255,255,.2); }
+
+    /* ── ÍNDICE ── */
+    .index-bar {
+      background: var(--bk); padding: 20px 32px;
+      display: flex; gap: 0; overflow-x: auto;
+    }
+    .index-bar a {
+      color: rgba(255,255,255,.6); text-decoration: none; font-size: 12px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; padding: 6px 20px; white-space: nowrap;
+      border-right: 1px solid rgba(255,255,255,.1); transition: color .2s;
+    }
+    .index-bar a:last-child { border-right: none; }
+    .index-bar a:hover { color: var(--c); }
+
+    /* ── SECCIONES ── */
+    .sec { padding: 72px 0; }
+    .sec-white { background: var(--bl); }
+    .sec-gray { background: var(--g); }
+    .sec-dark { background: var(--v); }
+
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--c); margin-bottom: 10px;
+    }
+    .sec-dark .eyebrow { color: var(--r); }
+    .sec-title {
+      font-size: clamp(22px, 3vw, 34px); font-weight: 900; color: var(--v);
+      line-height: 1.15; margin-bottom: 12px;
+    }
+    .sec-dark .sec-title { color: var(--bl); }
+    .sec-intro {
+      font-size: 15px; color: var(--gt); max-width: 700px; margin-bottom: 40px; line-height: 1.8;
+    }
+    .sec-dark .sec-intro { color: rgba(255,255,255,.8); }
+
+    /* ── PHASE HEADER ── */
+    .ph {
+      display: flex; align-items: center; gap: 20px; margin-bottom: 36px;
+    }
+    .ph-num {
+      width: 60px; height: 60px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 900;
+    }
+    .ph1 .ph-num { background: var(--c); color: var(--v); }
+    .ph2 .ph-num { background: var(--r); color: var(--bl); }
+    .ph3 .ph-num { background: rgba(255,255,255,.15); color: var(--bl); border: 2px solid var(--c); }
+    .ph-text .sub {
+      font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--c); display: block; margin-bottom: 4px;
+    }
+    .ph2 .ph-text .sub { color: var(--r); }
+    .ph3 .ph-text .sub { color: var(--c); }
+    .ph-text h2 { font-size: clamp(18px, 2.5vw, 28px); font-weight: 900; color: var(--v); }
+    .sec-dark .ph-text h2 { color: var(--bl); }
+
+    /* ── ALERT BOX ── */
+    .alert {
+      border-radius: 0 10px 10px 0; padding: 16px 22px; margin-bottom: 32px;
+      font-size: 14px; line-height: 1.7;
+    }
+    .alert-blue { background: rgba(18,189,255,.1); border-left: 4px solid var(--c); color: var(--gt); }
+    .alert-pink { background: rgba(254,103,180,.1); border-left: 4px solid var(--r); color: var(--gt); }
+    .alert-dark { background: rgba(18,189,255,.1); border-left: 4px solid var(--c); color: rgba(255,255,255,.85); }
+    .alert strong { color: var(--v); }
+    .alert-dark strong { color: var(--c); }
+    .alert-pink strong { color: #c0005a; }
+
+    /* ── GRIDS ── */
+    .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media(max-width:680px){ .g2,.g3 { grid-template-columns: 1fr; } }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--g); border-radius: 12px; padding: 24px;
+    }
+    .sec-dark .card { background: rgba(255,255,255,.07); }
+    .card-title {
+      font-size: 13px; font-weight: 700; color: var(--v); margin-bottom: 12px;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .sec-dark .card-title { color: var(--c); }
+
+    /* ── SEO TABLE ── */
+    .seo-section-block { margin-bottom: 40px; }
+    .seo-section-label {
+      background: var(--v); color: var(--bl);
+      font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: 10px 20px; border-radius: 8px 8px 0 0; display: inline-block;
+    }
+    .seo-table {
+      width: 100%; border-collapse: collapse;
+      box-shadow: 0 2px 12px rgba(51,0,204,.08);
+      border-radius: 0 8px 8px 8px; overflow: hidden;
+    }
+    .seo-table thead tr { background: rgba(51,0,204,.06); }
+    .seo-table thead th {
+      padding: 12px 16px; text-align: left; font-size: 11px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; color: var(--v);
+    }
+    .seo-table tbody tr { border-bottom: 1px solid #E8E8F0; }
+    .seo-table tbody tr:last-child { border-bottom: none; }
+    .seo-table tbody tr:nth-child(even) { background: rgba(51,0,204,.02); }
+    .seo-table tbody td { padding: 12px 16px; font-size: 13px; color: var(--gt); }
+    .seo-table tbody td:first-child { font-weight: 600; color: var(--v); }
+    .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .b-high { background: #ffe0ec; color: #b5004f; }
+    .b-med { background: #fff3e0; color: #b85c00; }
+    .b-low { background: #e8f5e9; color: #2e7d32; }
+    .b-brand { background: rgba(51,0,204,.1); color: var(--v); }
+
+    /* ── KEYWORD TAGS ── */
+    .kw-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .kw {
+      background: rgba(51,0,204,.08); color: var(--v);
+      font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 6px;
+      font-family: 'Montserrat', monospace;
+    }
+    .kw-alert { background: rgba(254,103,180,.15); color: #a0005a; }
+    .kw-ok { background: rgba(18,189,255,.12); color: #0070a0; }
+
+    /* ── CAMPAIGN CARD ── */
+    .camp-card {
+      border-radius: 14px; padding: 28px; margin-bottom: 24px;
+      border-left: 5px solid var(--c);
+      background: var(--bl);
+      box-shadow: 0 2px 16px rgba(51,0,204,.06);
+    }
+    .camp-card.urgent { border-left-color: var(--r); }
+    .camp-header {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      margin-bottom: 16px; flex-wrap: wrap; gap: 12px;
+    }
+    .camp-name { font-size: 16px; font-weight: 900; color: var(--v); }
+    .camp-priority {
+      font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+    }
+    .p-critica { background: #ffe0ec; color: #b5004f; }
+    .p-alta { background: #fff3cd; color: #7a4f00; }
+    .p-media { background: rgba(51,0,204,.1); color: var(--v); }
+    .camp-note {
+      font-size: 13px; color: var(--gt); background: var(--g);
+      border-radius: 8px; padding: 12px 16px; margin-bottom: 16px; line-height: 1.7;
+    }
+    .adgroup { margin-top: 14px; }
+    .adgroup-title {
+      font-size: 12px; font-weight: 700; color: var(--c); text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 8px;
+    }
+    .camp-card.urgent .adgroup-title { color: var(--r); }
+
+    /* ── KPI ROW ── */
+    .kpi-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .kpi {
+      flex: 1; min-width: 130px; text-align: center;
+      background: var(--g); border-radius: 12px; padding: 20px 16px;
+    }
+    .sec-dark .kpi { background: rgba(255,255,255,.08); }
+    .kpi-val { font-size: 28px; font-weight: 900; color: var(--c); line-height: 1; margin-bottom: 6px; }
+    .kpi-lbl { font-size: 11px; font-weight: 600; color: var(--gt); text-transform: uppercase; letter-spacing: 1px; }
+    .sec-dark .kpi-lbl { color: rgba(255,255,255,.55); }
+    .ph2 .kpi-val { color: var(--r); }
+
+    /* ── TECH LIST ── */
+    .tech-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .tech-list li {
+      font-size: 14px; color: var(--gt); padding-left: 24px; position: relative; line-height: 1.6;
+    }
+    .tech-list li::before {
+      content: '✓'; position: absolute; left: 0; color: var(--c); font-weight: 900;
+    }
+    .sec-dark .tech-list li { color: rgba(255,255,255,.8); }
+    .sec-dark .tech-list li::before { color: var(--c); }
+
+    /* ── NEGATIVE KW ── */
+    .neg-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .neg-kw {
+      background: #fff0f0; color: #cc0000;
+      font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
+      text-decoration: line-through; opacity: .75;
+    }
+
+    /* ── META SECTION ── */
+    .meta-not-included {
+      background: rgba(254,103,180,.08);
+      border: 2px dashed var(--r);
+      border-radius: 16px; padding: 32px; text-align: center; margin-top: 36px;
+    }
+    .meta-not-included .mni-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--r); margin-bottom: 12px;
+    }
+    .meta-not-included h3 {
+      font-size: 22px; font-weight: 900; color: var(--v); margin-bottom: 12px;
+    }
+    .meta-not-included p { font-size: 14px; color: var(--gt); line-height: 1.7; max-width: 600px; margin: 0 auto 24px; }
+    .btn-quote {
+      display: inline-block; background: var(--r); color: var(--bl);
+      font-size: 13px; font-weight: 700; padding: 14px 32px; border-radius: 8px;
+      text-decoration: none; letter-spacing: 1px;
+    }
+
+    /* ── META PREVIEW ── */
+    .meta-funnel {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 32px;
+      border-radius: 14px; overflow: hidden;
+    }
+    @media(max-width:680px){ .meta-funnel { grid-template-columns: 1fr; } }
+    .mf-step { padding: 28px 24px; }
+    .mf-step:nth-child(1) { background: rgba(255,255,255,.12); }
+    .mf-step:nth-child(2) { background: rgba(255,255,255,.08); }
+    .mf-step:nth-child(3) { background: rgba(255,255,255,.05); }
+    .mf-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--r); margin-bottom: 8px;
+    }
+    .mf-title { font-size: 16px; font-weight: 900; color: var(--bl); margin-bottom: 8px; }
+    .mf-desc { font-size: 13px; color: rgba(255,255,255,.7); line-height: 1.6; }
+
+    /* ── INVEST TABLE ── */
+    .inv-table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(51,0,204,.1); }
+    .inv-table thead tr { background: var(--v); }
+    .inv-table thead th { padding: 16px 20px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--bl); }
+    .inv-table tbody tr { border-bottom: 1px solid #E0E0E0; }
+    .inv-table tbody tr:nth-child(even) { background: var(--g); }
+    .inv-table tbody td { padding: 16px 20px; font-size: 14px; color: var(--gt); vertical-align: top; }
+    .inv-table tbody td:first-child { font-weight: 700; color: var(--v); }
+    .inv-table tfoot tr { background: var(--v); }
+    .inv-table tfoot td { padding: 16px 20px; font-size: 14px; font-weight: 700; color: var(--bl); }
+    .ch { display: inline-block; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; }
+    .ch-g { background: var(--c); color: var(--v); }
+    .ch-m { background: var(--r); color: var(--bl); }
+    .ch-w { background: #25D366; color: #fff; }
+
+    /* ── CTA ── */
+    .cta-sec {
+      background: var(--v); padding: 80px 32px; text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-sec::before {
+      content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(18,189,255,.1) 0%, transparent 65%);
+    }
+    .cta-sec h2 { font-size: clamp(26px, 4vw, 46px); font-weight: 900; color: var(--r); margin-bottom: 14px; position: relative; z-index: 1; }
+    .cta-sec p { font-size: 17px; color: rgba(255,255,255,.85); margin-bottom: 40px; position: relative; z-index: 1; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+    .btn { display: inline-block; padding: 16px 34px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; letter-spacing: 1px; }
+    .btn-p { background: var(--r); color: var(--bl); }
+    .btn-s { background: transparent; color: var(--bl); border: 2px solid rgba(255,255,255,.35); }
+
+    /* ── FOOTER ── */
+    footer { background: #06001a; padding: 36px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    footer img { width: 110px; opacity: .85; }
+    .fi { font-size: 13px; color: rgba(255,255,255,.45); text-align: right; }
+    .fi a { color: var(--c); text-decoration: none; }
+    .fc { font-size: 11px; color: rgba(255,255,255,.25); text-align: center; width: 100%; border-top: 1px solid rgba(255,255,255,.06); padding-top: 14px; margin-top: 6px; }
+
+    /* ── DIVIDER ── */
+    .divider { height: 4px; background: linear-gradient(90deg, var(--v), var(--c), var(--r)); }
+  </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<section class="cover">
+  <img src="../../brand/boreal_logo_blanco.png" alt="Boreal Marketing" onerror="this.style.display='none'" />
+  <div class="cover-eyebrow">Plan de Marketing Digital 2026</div>
+  <h1>Argenfrío<br>Digital Plan</h1>
+  <p class="cover-sub">Estrategia completa en tres fases:<br>web orgánica · Google Ads · Meta Ads</p>
+  <div class="cover-bar"></div>
+  <div class="cover-pills">
+    <span class="pill pill-c">Fase 1 — SEO Web</span>
+    <span class="pill pill-r">Fase 2 — Google Ads</span>
+    <span class="pill pill-o">Fase 3 — Meta Ads</span>
+  </div>
+</section>
+
+<!-- ÍNDICE -->
+<nav class="index-bar">
+  <a href="#diagnostico">Diagnóstico</a>
+  <a href="#fase1">Fase 1 · SEO</a>
+  <a href="#fase2">Fase 2 · Google Ads</a>
+  <a href="#fase3">Fase 3 · Meta Ads</a>
+  <a href="#inversion">Inversión</a>
+</nav>
+<div class="divider"></div>
+
+<!-- DIAGNÓSTICO -->
+<section class="sec sec-white" id="diagnostico">
+  <div class="wrap">
+    <div class="eyebrow">00 · Punto de partida</div>
+    <h2 class="sec-title">¿Dónde está Argenfrío hoy?</h2>
+    <p class="sec-intro">Antes de invertir un peso en publicidad, hay que entender qué está roto. El relevamiento del sitio y el análisis del historial de posiciones en Google revela un patrón claro: buena empresa, mala visibilidad digital.</p>
+
+    <div class="g2">
+      <div>
+        <div class="card" style="border-left: 5px solid var(--r); background: #fff5f8;">
+          <div class="card-title" style="color: var(--r);">⚠ Problemas críticos</div>
+          <ul class="tech-list">
+            <li>Dos dominios activos en conflicto: <strong>argenfrio.com</strong> y <strong>argenfrio.com.ar</strong> — Google penaliza con contenido duplicado</li>
+            <li>Google Ads desactivado por inconsistencias en el sitio</li>
+            <li>Instagram mezcla audiencia industrial B2B con consumo B2C sin estrategia</li>
+            <li>WhatsApp Business: ~20 mensajes irrelevantes por día sin filtro</li>
+            <li>Sin CTA claro ni proceso de conversión definido en la web</li>
+            <li>Posición orgánica cayendo en keywords clave (ver análisis abajo)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="border-left: 5px solid var(--c); background: #f0f0ff;">
+          <div class="card-title">✦ Oportunidades reales</div>
+          <ul class="tech-list">
+            <li>Línea industrial con alta intención de búsqueda activa → Google Ads desde el día 1</li>
+            <li>40+ años de experiencia y certificaciones: capital de confianza no comunicado</li>
+            <li>Representaciones internacionales (Evapco, Tranter, SWEP) → keywords de marca sin explotar</li>
+            <li>Nueva línea de enfriadores portátiles: producto visual ideal para Meta Ads</li>
+            <li>Web en rediseño → oportunidad de construir sobre una base limpia</li>
+            <li>Servicio técnico diferencial → demanda de reparación con intención alta</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Análisis de posiciones -->
+    <div style="margin-top: 48px;">
+      <div class="eyebrow" style="margin-bottom: 8px;">Análisis del historial de posiciones orgánicas</div>
+      <h3 style="font-size: 18px; font-weight: 900; color: var(--v); margin-bottom: 8px;">Lo que dice el spreadsheet de palabras clave</h3>
+      <p style="font-size: 14px; color: var(--gt); margin-bottom: 24px; max-width: 680px;">El cliente llevó un seguimiento manual de sus posiciones en Google para 25+ keywords a lo largo de más de un año. La lectura es contundente:</p>
+
+      <div class="g3" style="margin-bottom: 16px;">
+        <div class="card" style="border-top: 4px solid var(--r); text-align: center;">
+          <div style="font-size: 40px; font-weight: 900; color: var(--r); line-height:1;">34–45</div>
+          <div style="font-size: 12px; font-weight: 700; color: var(--gt); margin-top: 6px;">"intercambiadores a placas"<br><span style="color: var(--r);">Su producto más importante</span></div>
+        </div>
+        <div class="card" style="border-top: 4px solid #ff8800; text-align: center;">
+          <div style="font-size: 40px; font-weight: 900; color: #ff8800; line-height:1;">0</div>
+          <div style="font-size: 12px; font-weight: 700; color: var(--gt); margin-top: 6px;">"aeroenfriador"<br><span style="color: #ff8800;">Nota del cliente: "No aparecemos!!"</span></div>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--c); text-align: center;">
+          <div style="font-size: 40px; font-weight: 900; color: var(--c); line-height:1;">3</div>
+          <div style="font-size: 12px; font-weight: 700; color: var(--gt); margin-top: 6px;">"reparación intercambiadores"<br><span style="color: var(--c);">Servicio — buena posición</span></div>
+        </div>
+      </div>
+
+      <div class="alert alert-pink">
+        <strong>Conclusión estratégica:</strong> la pérdida de posiciones orgánicas en sus keywords más importantes hace que Google Ads no sea opcional: es el puente de ingresos mientras se reconstruye la presencia orgánica con la nueva web. Sin ads, cada día que pasa es tráfico cedido a la competencia.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FASE 1 — SEO WEB -->
+<section class="sec sec-gray ph1" id="fase1">
+  <div class="wrap">
+    <div class="ph">
+      <div class="ph-num">01</div>
+      <div class="ph-text">
+        <span class="sub">Fase 1 · Base orgánica</span>
+        <h2>Diseño web optimizado para SEO</h2>
+      </div>
+    </div>
+
+    <p class="sec-intro">La nueva web es el cimiento de todo. Antes de invertir en publicidad, cada sección del sitio debe estar optimizada para que Google entienda de qué trata la empresa y posicione correctamente. El trabajo de SEO se hace una sola vez bien, y rinde para siempre.</p>
+
+    <div class="alert alert-blue">
+      <strong>Criterio de esta fase:</strong> Google Ads arranca apenas el sitio nuevo esté publicado. Por eso el SEO on-page debe estar resuelto en el mismo momento del lanzamiento: title tags, meta descriptions, estructura H1/H2, URL amigables y un único dominio activo. Sin esto, el Quality Score de los anuncios sube el CPC innecesariamente.
+    </div>
+
+    <!-- Tabla SEO por sección -->
+    <div class="eyebrow" style="margin-bottom: 8px;">Mapa de palabras clave por sección del sitio</div>
+    <h3 style="font-size: 17px; font-weight: 900; color: var(--v); margin-bottom: 24px;">Qué optimizar en cada página</h3>
+
+    <!-- HOME -->
+    <div class="seo-section-block">
+      <span class="seo-section-label">HOME</span>
+      <table class="seo-table">
+        <thead><tr><th>Elemento</th><th>Recomendación</th><th>Keywords objetivo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Title Tag</td>
+            <td>Argenfrío | Soluciones en Intercambio Térmico — Argentina</td>
+            <td>intercambiador de calor, transferencia térmica argentina</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>Meta Description</td>
+            <td>Más de 40 años fabricando intercambiadores de calor, aeroenfriadores y sistemas de enfriamiento industrial. Representantes de Evapco, Tranter y SWEP en Argentina.</td>
+            <td>—</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>H1</td>
+            <td>"Soluciones en Intercambio Térmico" (ya existe, mantener)</td>
+            <td>intercambio térmico</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>CTA principal</td>
+            <td>Botón visible above-the-fold: "Consultá tu proyecto" con link a WhatsApp o formulario</td>
+            <td>—</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>Schema</td>
+            <td>Organization + LocalBusiness con dirección, teléfono y horario</td>
+            <td>—</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Dominio único</td>
+            <td>Elegir argenfrio.com.ar (prioridad por audiencia local) y redirigir 301 desde argenfrio.com</td>
+            <td>—</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SOLUCIONES -->
+    <div class="seo-section-block">
+      <span class="seo-section-label">SOLUCIONES — Intercambiadores de Calor</span>
+      <table class="seo-table">
+        <thead><tr><th>Elemento</th><th>Recomendación</th><th>Keywords objetivo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Title Tag</td>
+            <td>Intercambiadores de Calor | A Placas, Casco y Tubo, Baterías — Argenfrío</td>
+            <td>intercambiadores de calor, intercambiadores a placas, casco y tubo</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>H1</td>
+            <td>"Intercambiadores de Calor para la Industria Argentina"</td>
+            <td>intercambiadores de calor</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>H2 por subsección</td>
+            <td>"Intercambiadores a Placas" / "Intercambiadores Casco y Tubo" / "Baterías Aletadas"</td>
+            <td>intercambiador a placas, intercambiador coraza y tubo, baterias aletadas</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>URLs</td>
+            <td>/soluciones/intercambiadores-a-placas · /soluciones/intercambiadores-casco-y-tubo</td>
+            <td>—</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Contenido mínimo</td>
+            <td>150 palabras por subsección: descripción del producto, aplicaciones, diferencial Argenfrío</td>
+            <td>intercambiador de calor industrial argentina</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Keywords en texto</td>
+            <td>Incluir naturalmente: "intercambiador de calor", "intercambiador de placas", "transferencia térmica"</td>
+            <td>intercambiador de calor, tubos aletados</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ENFRIAMIENTO -->
+    <div class="seo-section-block">
+      <span class="seo-section-label">SOLUCIONES — Sistemas de Enfriamiento</span>
+      <table class="seo-table">
+        <thead><tr><th>Elemento</th><th>Recomendación</th><th>Keywords objetivo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>H1 / H2</td>
+            <td>"Sistemas de Enfriamiento Industrial" → "Aeroenfriadores" / "Aerocondensadores" / "Condensadores Evaporativos"</td>
+            <td>aeroenfriadores, aerocondensadores, condensadores evaporativos</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>URLs</td>
+            <td>/soluciones/aeroenfriadores · /soluciones/aerocondensadores · /soluciones/condensadores-evaporativos</td>
+            <td>—</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Keywords adicionales</td>
+            <td>Economizadores, enfriadores de aceite, caloventiladores: al menos mencionados con H3</td>
+            <td>economizadores, enfriador de aceite industrial</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Aplicaciones</td>
+            <td>Listar casos de uso: refrigeración industrial, procesos, energía. Suma keywords de cola larga.</td>
+            <td>refrigeración industrial argentina, sistemas de enfriamiento proceso</td>
+            <td><span class="badge b-low">Media</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REPRESENTACIONES -->
+    <div class="seo-section-block">
+      <span class="seo-section-label">REPRESENTACIONES</span>
+      <table class="seo-table">
+        <thead><tr><th>Elemento</th><th>Recomendación</th><th>Keywords objetivo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Title Tag</td>
+            <td>Representaciones | Evapco, Tranter, SWEP, Alindair en Argentina — Argenfrío</td>
+            <td>Evapco Argentina, Tranter Argentina, SWEP intercambiadores Argentina</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>H2 por marca</td>
+            <td>Una sección con H2 por cada marca representada con descripción breve</td>
+            <td>Evapco, Tranter, SWEP, Alindair, Delta-T</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>Contenido</td>
+            <td>Para cada marca: qué fabrican, para qué industrias, por qué Argenfrío es el representante ideal</td>
+            <td>distribuidor Evapco Argentina, condensadores Evapco</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="seo-section-block">
+      <span class="seo-section-label">SERVICIOS</span>
+      <table class="seo-table">
+        <thead><tr><th>Elemento</th><th>Recomendación</th><th>Keywords objetivo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Title Tag</td>
+            <td>Servicios | Reparación y Mantenimiento de Intercambiadores de Calor — Argenfrío</td>
+            <td>reparación intercambiadores de calor, mantenimiento intercambiadores industriales</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>H1</td>
+            <td>"Reparación y Mantenimiento de Equipos de Intercambio Térmico"</td>
+            <td>reparación intercambiadores de calor</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>H2 por servicio</td>
+            <td>"Reparación de Intercambiadores" / "Cambio de Tubos" / "Limpieza Industrial" / "Montaje"</td>
+            <td>limpieza intercambiadores, cambio de tubos intercambiador, montaje intercambiadores</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>CTA en servicio</td>
+            <td>Botón de consulta urgente visible: "Equipo parado — Consultanos ahora"</td>
+            <td>—</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- NOSOTROS / CONTACTO -->
+    <div class="seo-section-block">
+      <span class="seo-section-label">NOSOTROS · CONTACTO</span>
+      <table class="seo-table">
+        <thead><tr><th>Elemento</th><th>Recomendación</th><th>Keywords objetivo</th><th>Prioridad</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>NAP unificado</td>
+            <td>Nombre, dirección y teléfono idénticos en todo el sitio y en Google Business Profile</td>
+            <td>Argenfrío San Martín Buenos Aires</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>Google Business Profile</td>
+            <td>Actualizar con nuevo dominio, fotos reales del taller, horarios, categorías correctas</td>
+            <td>intercambiadores de calor San Martín, refrigeración industrial zona norte</td>
+            <td><span class="badge b-high">Crítica</span></td>
+          </tr>
+          <tr>
+            <td>Nosotros — H1</td>
+            <td>"Más de 40 años en intercambio térmico industrial" — la trayectoria es un diferencial SEO y de confianza</td>
+            <td>empresa intercambiadores de calor Argentina</td>
+            <td><span class="badge b-med">Alta</span></td>
+          </tr>
+          <tr>
+            <td>Certificaciones</td>
+            <td>Mencionar explícitamente las certificaciones con texto (no solo imagen) — Google no lee imágenes</td>
+            <td>—</td>
+            <td><span class="badge b-low">Media</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Checklist técnico -->
+    <div class="eyebrow" style="margin-top: 48px; margin-bottom: 8px;">Checklist técnico de lanzamiento</div>
+    <h3 style="font-size: 17px; font-weight: 900; color: var(--v); margin-bottom: 20px;">Lo que debe estar resuelto antes de publicar el sitio</h3>
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">SEO técnico</div>
+        <ul class="tech-list">
+          <li>Un solo dominio activo con redirect 301 del otro</li>
+          <li>HTTPS habilitado y sin mixed content</li>
+          <li>Sitemap XML enviado a Google Search Console</li>
+          <li>robots.txt limpio, sin bloqueos accidentales</li>
+          <li>URLs amigables en minúscula con guiones (no guiones bajos)</li>
+          <li>Imágenes en WebP con atributo alt descriptivo</li>
+          <li>Core Web Vitals: LCP &lt; 2.5s, CLS &lt; 0.1</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Conversiones y tracking</div>
+        <ul class="tech-list">
+          <li>Google Analytics 4 instalado y verificado</li>
+          <li>Google Tag Manager configurado</li>
+          <li>Eventos: clic en teléfono, clic en WhatsApp, envío de formulario</li>
+          <li>Google Search Console verificada con nuevo dominio</li>
+          <li>Google Business Profile actualizado y vinculado</li>
+          <li>Meta Pixel instalado desde el inicio (para acumular audiencia)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FASE 2 — GOOGLE ADS -->
+<section class="sec sec-white ph2" id="fase2">
+  <div class="wrap">
+    <div class="ph">
+      <div class="ph-num">02</div>
+      <div class="ph-text">
+        <span class="sub">Fase 2 · Paid Search — Inicio con el lanzamiento del sitio</span>
+        <h2>Campaña Google Ads — Línea Industrial</h2>
+      </div>
+    </div>
+
+    <p class="sec-intro">Los productos industriales de Argenfrío tienen audiencias que los buscan activamente en Google hoy. Cada día sin anuncios es tráfico regalado a la competencia. Esta campaña arranca el mismo día que se publica la nueva web.</p>
+
+    <div class="alert alert-blue">
+      <strong>Condición de activación:</strong> dominio único resuelto + sitio con CTAs funcionando + tracking de conversiones configurado. Lanzar sin esto es desperdiciar inversión publicitaria.
+    </div>
+
+    <!-- CAMPAÑA 1 -->
+    <div class="camp-card urgent">
+      <div class="camp-header">
+        <div class="camp-name">Campaña 1 — Intercambiadores de Calor</div>
+        <span class="camp-priority p-critica">🔴 PRIORIDAD CRÍTICA</span>
+      </div>
+      <div class="camp-note">
+        Su producto principal aparece en posición <strong>34 a 45</strong> en Google de forma orgánica — literalmente en la página 3 o 4. Sin Google Ads, son invisibles para los compradores más calificados del mercado. Esta campaña es la más urgente.
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 1 — A placas</div>
+        <div class="kw-list">
+          <span class="kw kw-alert">intercambiadores a placas</span>
+          <span class="kw kw-alert">intercambiador a placas</span>
+          <span class="kw kw-alert">intercambiador de placas</span>
+          <span class="kw kw-alert">intercambiador de calor</span>
+          <span class="kw">intercambiadores de calor precio</span>
+          <span class="kw">intercambiador de calor industrial argentina</span>
+          <span class="kw">comprar intercambiador de calor</span>
+        </div>
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 2 — Casco y tubo / Coraza y tubo</div>
+        <div class="kw-list">
+          <span class="kw">intercambiador casco y tubo</span>
+          <span class="kw">intercambiador coraza y tubo</span>
+          <span class="kw">intercambiadores de calor casco y tubo</span>
+          <span class="kw">shell and tube heat exchanger argentina</span>
+        </div>
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 3 — Baterías aletadas y tubos</div>
+        <div class="kw-list">
+          <span class="kw">baterias aletadas</span>
+          <span class="kw">tubos aletados</span>
+          <span class="kw">serpentinas de enfriamiento</span>
+          <span class="kw">serpentinas industriales argentina</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAÑA 2 -->
+    <div class="camp-card">
+      <div class="camp-header">
+        <div class="camp-name">Campaña 2 — Sistemas de Enfriamiento</div>
+        <span class="camp-priority p-alta">🟠 ALTA</span>
+      </div>
+      <div class="camp-note">
+        Aeroenfriadores y aerocondensadores: el cliente anotó en su spreadsheet <em>"No aparecemos!!"</em> y <em>"Bajamos mucho"</em>. Son productos que venden bien pero están ciegos digitalmente. Los condensadores evaporativos están en posición 15-34 con nota: <em>"Tenemos que ser de los primeros"</em>.
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 1 — Aeroenfriadores y Aerocondensadores</div>
+        <div class="kw-list">
+          <span class="kw kw-alert">aeroenfriador</span>
+          <span class="kw kw-alert">aeroenfriadores</span>
+          <span class="kw kw-alert">aerocondensadores</span>
+          <span class="kw">aeroenfriador industrial</span>
+          <span class="kw">aerocondensadores industriales argentina</span>
+          <span class="kw">aeroenfriadores y aerocondensadores</span>
+        </div>
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 2 — Condensadores Evaporativos</div>
+        <div class="kw-list">
+          <span class="kw">condensadores evaporativos</span>
+          <span class="kw">condensador evaporativo industrial</span>
+          <span class="kw">torre de enfriamiento evaporativa</span>
+          <span class="kw">condensador evaporativo precio</span>
+        </div>
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 3 — Economizadores</div>
+        <div class="kw-list">
+          <span class="kw kw-ok">economizadores</span>
+          <span class="kw kw-ok">economizador agua aire</span>
+          <span class="kw kw-ok">economizador aire aire</span>
+          <span class="kw kw-ok">economizador industrial</span>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--gt); margin-top: 8px; font-style: italic;">
+        ✦ Economizadores: actualmente en posición 0, probable baja competencia → CPCs bajos, oportunidad de impresiones baratas.
+      </p>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 4 — Enfriadores de Aceite</div>
+        <div class="kw-list">
+          <span class="kw">enfriador de aceite</span>
+          <span class="kw">enfriadores de aceite industrial</span>
+          <span class="kw">refrigeración de aceite industrial</span>
+          <span class="kw">oil cooler industrial argentina</span>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: var(--gt); margin-top: 8px; font-style: italic;">
+        ⚠ El cliente anotó: "¿por qué posición 7 si estamos patrocinados?" — indica campaña activa mal configurada. Reestructurar desde cero antes de reactivar.
+      </p>
+    </div>
+
+    <!-- CAMPAÑA 3 -->
+    <div class="camp-card">
+      <div class="camp-header">
+        <div class="camp-name">Campaña 3 — Servicios de Reparación y Mantenimiento</div>
+        <span class="camp-priority p-alta">🟠 ALTA</span>
+      </div>
+      <div class="camp-note">
+        Quien busca "reparación de intercambiadores" tiene un equipo caído y necesita solución urgente. Es la intención comercial más alta posible: problema concreto, decisión inmediata. Actualmente aparecen en posición 3 de forma orgánica — un anuncio los pone en posición 1 con sitelinks adicionales.
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 1 — Reparación</div>
+        <div class="kw-list">
+          <span class="kw">reparación de intercambiadores de calor</span>
+          <span class="kw">reparación intercambiadores industriales</span>
+          <span class="kw">reparación de intercambiadores a placas</span>
+          <span class="kw">reparación torres de enfriamiento</span>
+          <span class="kw">reparación aeroenfriadores</span>
+        </div>
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Grupo 2 — Mantenimiento técnico especializado</div>
+        <div class="kw-list">
+          <span class="kw">mantenimiento intercambiadores de calor</span>
+          <span class="kw">cambio de tubos intercambiador</span>
+          <span class="kw">limpieza intercambiadores industriales</span>
+          <span class="kw">montaje intercambiadores de calor</span>
+          <span class="kw">mantenimiento preventivo equipos térmicos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAÑA 4 -->
+    <div class="camp-card">
+      <div class="camp-header">
+        <div class="camp-name">Campaña 4 — Marcas Representadas</div>
+        <span class="camp-priority p-media">🔵 MEDIA</span>
+      </div>
+      <div class="camp-note">
+        Los leads que buscan por nombre de marca (Evapco, Tranter, SWEP) son los más calificados del mercado: ya saben lo que quieren y buscan un distribuidor local. El copy debe dejar claro que Argenfrío es el representante oficial en Argentina.
+      </div>
+
+      <div class="adgroup">
+        <div class="adgroup-title">Keywords por marca</div>
+        <div class="kw-list">
+          <span class="kw b-brand">Evapco Argentina</span>
+          <span class="kw b-brand">condensadores Evapco</span>
+          <span class="kw b-brand">Tranter Argentina</span>
+          <span class="kw b-brand">Tranter intercambiadores</span>
+          <span class="kw b-brand">SWEP intercambiadores</span>
+          <span class="kw b-brand">SWEP placas Argentina</span>
+          <span class="kw b-brand">Alindair Argentina</span>
+          <span class="kw b-brand">caloventiladores Alindair</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Config técnica -->
+    <div class="eyebrow" style="margin-top: 48px; margin-bottom: 8px;">Configuración técnica de la cuenta</div>
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Antes del lanzamiento</div>
+        <ul class="tech-list">
+          <li>Auditar historial de la cuenta Google Ads existente</li>
+          <li>Resolver conflicto de dominios (1 dominio activo con 301)</li>
+          <li>Configurar conversiones: formulario, llamada, WhatsApp, duración de sesión</li>
+          <li>Segmentación geográfica: Argentina + ajuste positivo AMBA, Córdoba, Rosario, Zárate, Campana</li>
+          <li>Estrategia de puja inicial: CPC manual (acumular data antes de automatizar)</li>
+          <li>Migrar a tCPA cuando haya 30+ conversiones por campaña</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-title">Palabras negativas — día 1</div>
+        <p style="font-size: 13px; color: var(--gt); margin-bottom: 14px; line-height: 1.6;">Excluir desde el primer día para no pagar clics irrelevantes:</p>
+        <div class="neg-list">
+          <span class="neg-kw">gratis</span>
+          <span class="neg-kw">casero</span>
+          <span class="neg-kw">doméstico</span>
+          <span class="neg-kw">segunda mano</span>
+          <span class="neg-kw">planos</span>
+          <span class="neg-kw">manual</span>
+          <span class="neg-kw">DIY</span>
+          <span class="neg-kw">cómo hacer</span>
+          <span class="neg-kw">youtube</span>
+          <span class="neg-kw">wikipedia</span>
+          <span class="neg-kw">aires domésticos</span>
+          <span class="neg-kw">uso personal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-row">
+      <div class="kpi"><div class="kpi-val">&gt;5%</div><div class="kpi-lbl">CTR objetivo búsqueda</div></div>
+      <div class="kpi"><div class="kpi-val">≥7</div><div class="kpi-lbl">Quality Score keywords principales</div></div>
+      <div class="kpi"><div class="kpi-val">Mes 1</div><div class="kpi-lbl">Primeros leads calificados</div></div>
+      <div class="kpi"><div class="kpi-val">&lt;20%</div><div class="kpi-lbl">Impresiones perdidas por presupuesto</div></div>
+      <div class="kpi"><div class="kpi-val">4</div><div class="kpi-lbl">Campañas activas al lanzamiento</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FASE 3 — META ADS -->
+<section class="sec sec-dark ph3" id="fase3">
+  <div class="wrap">
+    <div class="ph">
+      <div class="ph-num">03</div>
+      <div class="ph-text">
+        <span class="sub">Fase 3 · ~Mes 3 · Cotización separada</span>
+        <h2>Meta Ads — Enfriadores Portátiles</h2>
+      </div>
+    </div>
+
+    <p class="sec-intro">Los enfriadores portátiles son un producto nuevo en el mercado local. Nadie los busca en Google porque todavía no sabe que existen. Meta Ads es el canal correcto para interrumpir, sorprender y generar deseo donde no había demanda activa.</p>
+
+    <div class="alert alert-dark">
+      <strong>Esta fase no está incluida en el servicio actual.</strong> Requiere cotización por separado una vez cerradas las Fases 1 y 2. Se detalla el approach estratégico para que el cliente comprenda la lógica antes de decidir.
+    </div>
+
+    <!-- Google vs Meta visual -->
+    <div style="background: rgba(255,255,255,.06); border-radius: 16px; padding: 32px; margin-bottom: 36px; border: 1px solid rgba(255,255,255,.1);">
+      <div class="eyebrow" style="margin-bottom: 12px;">La diferencia fundamental</div>
+      <div class="g2">
+        <div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--c); text-transform: uppercase; margin-bottom: 8px;">Google Ads · Línea Industrial</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,.8); line-height: 1.7;"><strong style="color:var(--c)">Captura demanda que ya existe.</strong> El comprador sabe lo que quiere, lo busca, y Argenfrío aparece en el momento exacto. El rol del anuncio es ganarle a la competencia en el instante de la búsqueda.</p>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--r); text-transform: uppercase; margin-bottom: 8px;">Meta Ads · Enfriadores Portátiles</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,.8); line-height: 1.7;"><strong style="color:var(--r)">Crea demanda donde no había.</strong> El potencial cliente no busca el producto porque no sabe que existe. Meta lo interrumpe mientras scrollea, le muestra el problema que tiene y la solución que nunca buscó.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Funnel Meta -->
+    <div class="eyebrow" style="margin-bottom: 12px;">Estructura del embudo</div>
+    <div class="meta-funnel">
+      <div class="mf-step">
+        <div class="mf-label">TOFU · Awareness</div>
+        <div class="mf-title">Mostrá el problema</div>
+        <div class="mf-desc">Video 15-30 seg. Espacio con calor → producto en acción → resultado. Sin texto técnico. Objetivo: Alcance. Audiencia fría por intereses: gastronomía, eventos, depósitos, industria.</div>
+      </div>
+      <div class="mf-step">
+        <div class="mf-label">MOFU · Consideración</div>
+        <div class="mf-title">Educá al interesado</div>
+        <div class="mf-desc">Carrusel con casos de uso reales. Retargeting de quienes vieron el video +50%. Specs del producto. CTA: "Ver más" → página del producto.</div>
+      </div>
+      <div class="mf-step">
+        <div class="mf-label">BOFU · Conversión</div>
+        <div class="mf-title">Cerrá la venta</div>
+        <div class="mf-desc">Lead Ads o derivación a WhatsApp. Retargeting de visitantes web y quienes interactuaron. Oferta o ventaja concreta. Copy directo: "Tu espacio es un horno. Consultá sin compromiso."</div>
+      </div>
+    </div>
+
+    <!-- Audiencias -->
+    <div style="margin-top: 36px;">
+      <div class="eyebrow" style="margin-bottom: 12px;">Segmentos prioritarios</div>
+      <div class="g2">
+        <div class="card">
+          <div class="card-title">Audiencias por sector</div>
+          <ul class="tech-list">
+            <li><strong>Gastronomía y eventos</strong> — alta estacionalidad, decisión rápida</li>
+            <li><strong>Depósitos y logística</strong> — problema permanente, alta intención</li>
+            <li><strong>Talleres e industria liviana</strong> — bienestar de empleados, tendencia creciente</li>
+            <li><strong>Organizadores de eventos</strong> — compra recurrente, alto LTV</li>
+            <li><strong>Comercios con atención al público</strong> — sin AC central, temporada verano</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title">Nota crítica de timing</div>
+          <ul class="tech-list">
+            <li>La ventana de alta demanda es <strong>octubre–abril</strong></li>
+            <li>La campaña de awareness debe arrancar en <strong>septiembre</strong></li>
+            <li>Esperar a diciembre es llegar tarde con el retargeting frío</li>
+            <li>El pixel debe instalarse en el sitio desde el lanzamiento (Fase 1) para acumular audiencia caliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- No incluido -->
+    <div class="meta-not-included" style="background: rgba(254,103,180,.1); border-color: var(--r);">
+      <div class="mni-label">Servicio no incluido en esta propuesta</div>
+      <h3 style="color: var(--bl);">Meta Ads requiere cotización separada</h3>
+      <p style="color: rgba(255,255,255,.8);">La gestión de Meta Ads para la línea de enfriadores portátiles implica producción de contenido visual, gestión de pauta y estrategia de funnel. Se cotiza de forma independiente una vez consolidadas las Fases 1 y 2.</p>
+      <a href="mailto:jbertucci@boreal.com.ar" class="btn-quote">Solicitar cotización Meta Ads</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INVERSIÓN -->
+<section class="sec sec-white" id="inversion">
+  <div class="wrap">
+    <div class="eyebrow">04 · Inversión</div>
+    <h2 class="sec-title">Resumen de servicios y honorarios</h2>
+    <p class="sec-intro">Los valores corresponden a honorarios de gestión de Boreal Marketing. El presupuesto en plataformas (Google Ads) es adicional y queda a cargo del cliente.</p>
+
+    <table class="inv-table">
+      <thead>
+        <tr>
+          <th>Fase</th>
+          <th>Servicio</th>
+          <th>Canal</th>
+          <th>Modalidad</th>
+          <th>Honorario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fase 1</td>
+          <td>Optimización SEO on-page del sitio nuevo</td>
+          <td><span class="ch ch-g">Orgánico</span></td>
+          <td>Único al lanzamiento</td>
+          <td>A convenir</td>
+        </tr>
+        <tr>
+          <td>Fase 2</td>
+          <td>Setup + gestión mensual Google Ads (4 campañas)</td>
+          <td><span class="ch ch-g">Google Ads</span></td>
+          <td>Setup único + mensual</td>
+          <td>A convenir</td>
+        </tr>
+        <tr>
+          <td>Fase 2+</td>
+          <td>Chatbot WhatsApp Business — Desarrollo e integración</td>
+          <td><span class="ch ch-w">WhatsApp</span></td>
+          <td>Único + mantenimiento</td>
+          <td>A convenir</td>
+        </tr>
+        <tr>
+          <td>Fase 3</td>
+          <td>Meta Ads enfriadores portátiles — Estrategia + gestión</td>
+          <td><span class="ch ch-m">Meta Ads</span></td>
+          <td>Cotización separada</td>
+          <td style="color: var(--r); font-weight: 700;">Cotizar aparte</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Inversión en pauta Google Ads (recomendado — a cargo del cliente)</td>
+          <td>A definir con objetivos</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p style="font-size: 12px; color: #999; margin-top: 14px; font-style: italic; line-height: 1.7;">
+      * El presupuesto de pauta en Google Ads es independiente de los honorarios de gestión y se define según objetivos de leads y mercado.<br>
+      * El pixel de Meta se instala en Fase 1 sin costo adicional para acumular audiencia antes del lanzamiento de Fase 3.<br>
+      * Meta Ads se cotiza como servicio independiente al cierre de Fases 1 y 2.
+    </p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <h2>Arranquemos.</h2>
+  <p>La nueva web es el pistoletazo de salida. Cuando esté lista, todo lo demás está listo para encenderse.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/5491131040042" class="btn btn-p">Hablemos por WhatsApp</a>
+    <a href="mailto:jbertucci@boreal.com.ar" class="btn btn-s">jbertucci@boreal.com.ar</a>
+  </div>
+</section>
+
+<footer>
+  <img src="../../brand/boreal_logo_blanco.png" alt="Boreal Marketing" onerror="this.style.display='none'" />
+  <div class="fi">
+    <div>Javier Bertucci · CEO Boreal Marketing</div>
+    <div><a href="mailto:jbertucci@boreal.com.ar">jbertucci@boreal.com.ar</a> · <a href="https://boreal.com.ar">boreal.com.ar</a> · +54 9 11 3104-0042</div>
+  </div>
+  <div class="fc">Documento confidencial — Plan Digital Argenfrío 2026 · Boreal Marketing © 2026 · Tu Norte, seguinos.</div>
+</footer>
+
+</body>
+</html>

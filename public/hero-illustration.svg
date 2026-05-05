@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F5F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8E8E8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E21B0F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C41808;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Decorative triangle top-left -->
+  <polygon points="0,0 200,0 0,200" fill="#E21B0F" opacity="0.1"/>
+
+  <!-- Decorative shapes -->
+  <circle cx="650" cy="80" r="60" fill="#E21B0F" opacity="0.05"/>
+  <rect x="50" y="350" width="120" height="120" fill="#999999" opacity="0.08" rx="10"/>
+
+  <!-- Package/Box illustration -->
+  <g id="package">
+    <!-- Main box -->
+    <rect x="250" y="140" width="180" height="160" fill="#FFFFFF" stroke="#E21B0F" stroke-width="3" rx="5"/>
+
+    <!-- Box top flap -->
+    <polygon points="250,140 340,80 430,140 340,140" fill="#E21B0F"/>
+    <polygon points="250,140 340,80 340,140" fill="#C41808" opacity="0.8"/>
+
+    <!-- Package tape -->
+    <rect x="325" y="140" width="30" height="160" fill="#E21B0F" opacity="0.6"/>
+
+    <!-- Box corner highlight -->
+    <rect x="400" y="140" width="30" height="30" fill="white" opacity="0.4"/>
+  </g>
+
+  <!-- Delivery person -->
+  <g id="courier">
+    <!-- Head -->
+    <circle cx="500" cy="170" r="25" fill="#DFA372"/>
+
+    <!-- Body - red shirt -->
+    <ellipse cx="500" cy="230" rx="35" ry="45" fill="#E21B0F"/>
+
+    <!-- Arms -->
+    <g id="left-arm">
+      <ellipse cx="460" cy="220" rx="15" ry="50" fill="#DFA372" transform="rotate(-25 460 220)"/>
+      <circle cx="430" cy="190" r="12" fill="#DFA372"/>
+    </g>
+    <g id="right-arm">
+      <ellipse cx="540" cy="220" rx="15" ry="50" fill="#DFA372" transform="rotate(25 540 220)"/>
+      <circle cx="570" cy="200" r="12" fill="#DFA372"/>
+    </g>
+
+    <!-- Legs -->
+    <rect x="485" y="275" width="12" height="60" fill="#333333"/>
+    <rect x="503" y="275" width="12" height="60" fill="#333333"/>
+
+    <!-- Shoes -->
+    <ellipse cx="491" cy="340" rx="12" ry="8" fill="#555555"/>
+    <ellipse cx="509" cy="340" rx="12" ry="8" fill="#555555"/>
+
+    <!-- Face details -->
+    <circle cx="495" cy="165" r="3" fill="#333333"/>
+    <circle cx="505" cy="165" r="3" fill="#333333"/>
+    <path d="M 500 175 Q 500 178 502 180" stroke="#333333" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Phone in hand -->
+  <g id="phone">
+    <rect x="555" y="195" width="45" height="75" fill="#333333" rx="6"/>
+    <rect x="560" y="200" width="35" height="60" fill="#4DB8E8" rx="3"/>
+    <circle cx="577.5" cy="270" r="4" fill="#666666"/>
+  </g>
+
+  <!-- Arrow/movement indicator -->
+  <g id="arrow" transform="translate(350, 380)">
+    <path d="M 0 0 L 40 0 L 35 -8 M 40 0 L 35 8" stroke="#E21B0F" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="55" y="8" font-family="Inter, sans-serif" font-size="16" font-weight="600" fill="#E21B0F">Entrega rápida</text>
+  </g>
+
+  <!-- Info badges -->
+  <g id="badge1" transform="translate(100, 420)">
+    <circle cx="0" cy="0" r="35" fill="#E21B0F" opacity="0.15"/>
+    <text x="-28" y="5" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#E21B0F">24/7</text>
+  </g>
+
+  <g id="badge2" transform="translate(650, 420)">
+    <circle cx="0" cy="0" r="35" fill="#E21B0F" opacity="0.15"/>
+    <text x="-30" y="5" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#E21B0F">Tiempo Real</text>
+  </g>
+
+  <!-- Glow effect -->
+  <circle cx="320" cy="220" r="120" fill="#E21B0F" opacity="0.02"/>
+</svg>
