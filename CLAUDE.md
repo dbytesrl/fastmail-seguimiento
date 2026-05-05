@@ -1,3 +1,61 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+---
+
+## FASTMAIL LANDING — CODEBASE TÉCNICO
+
+### Stack
+- **Next.js 14** (App Router) + **TypeScript** + **Tailwind CSS**
+- **@formspree/react** para el formulario de contacto
+- Deploy en **Vercel** (organización `dbytesrls-projects`)
+- Repositorio: `github.com/dbytesrl/fastmail-seguimiento`
+
+### Comandos clave
+```bash
+npm run dev       # Desarrollo local (puerto 3000)
+npm run build     # Build de producción
+npm start         # Servidor de producción local
+vercel --prod --scope dbytesrls-projects   # Deploy a producción
+```
+
+### Arquitectura de componentes
+```
+src/app/page.tsx          # Página principal — orquesta los 5 componentes
+src/components/
+  Header.tsx              # Logo SVG inline + nav + CTA "Ver mi envío"
+  HeroSection.tsx         # Columna izquierda (copy + CTAs) + imagen derecha
+  TrackingOptions.tsx     # Dos cards: Paquetería (rojo) y Postal/Telegramas (azul)
+  ContactForm.tsx         # Formulario con useForm("mdabgblv") de @formspree/react
+  Footer.tsx              # Logo blanco + links + datos de contacto
+```
+
+### URLs críticas del proyecto
+| Servicio | URL |
+|---|---|
+| Tracking Paquetería | `https://epresislv.fastmail.com.ar/seguimiento` |
+| Tracking Postal/Telegramas | `https://trackerfmv2.fastmail.com.ar/login` |
+| Formspree endpoint | `https://formspree.io/f/mdabgblv` (ID: `mdabgblv`) |
+
+### Colores Fastmail (definidos en `tailwind.config.ts`)
+```
+fastmail.red   = #E21B0F   // Paquetería, logo, CTAs primarios
+fastmail.gray  = #777777   // Texto secundario
+fastmail.dark  = #333333   // Texto principal
+fastmail.light = #F5F5F5   // Fondos suaves
+```
+Postal/Telegramas usa `blue-500` (#3B82F6) de Tailwind directamente.
+
+### Logo
+Implementado como SVG inline en `Header.tsx` y `Footer.tsx` — no es un archivo externo.  
+Estructura: `FASTMAIL` (rojo) + chevron `>` (gris) + `CORREO PRIVADO` (negro/blanco según fondo).
+
+### Imagen hero
+Archivo: `public/hero-delivery.jpg` — foto real del courier Fastmail con la van.
+
+---
+
 # 🧠 MARKETING INTELLIGENCE AGENT — CLAUDE.md
 > Agente especializado en auditoría de presencia digital, detección de oportunidades de mejora y asociación estratégica con campañas de paid media. Nivel Fortune 500.
 

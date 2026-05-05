@@ -87,102 +87,13 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right Illustration */}
+          {/* Right Image */}
           <div className="animate-slide-in-right hidden md:flex justify-center">
-            <svg
-              viewBox="0 0 800 500"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full max-w-md"
-            >
-              <defs>
-                <linearGradient
-                  id="bgGrad"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop
-                    offset="0%"
-                    style={{ stopColor: "#F5F5F5", stopOpacity: 1 }}
-                  />
-                  <stop
-                    offset="100%"
-                    style={{ stopColor: "#E8E8E8", stopOpacity: 1 }}
-                  />
-                </linearGradient>
-              </defs>
-
-              <rect width="800" height="500" fill="url(#bgGrad)" />
-
-              {/* Decorative elements */}
-              <polygon points="0,0 200,0 0,200" fill="#E21B0F" opacity="0.1" />
-              <circle cx="650" cy="80" r="60" fill="#E21B0F" opacity="0.05" />
-
-              {/* Package */}
-              <rect
-                x="250"
-                y="140"
-                width="180"
-                height="160"
-                fill="#FFFFFF"
-                stroke="#E21B0F"
-                strokeWidth="3"
-                rx="5"
-              />
-              <polygon points="250,140 340,80 430,140 340,140" fill="#E21B0F" />
-              <polygon
-                points="250,140 340,80 340,140"
-                fill="#C41808"
-                opacity="0.8"
-              />
-              <rect x="325" y="140" width="30" height="160" fill="#E21B0F" opacity="0.6" />
-
-              {/* Person */}
-              <circle cx="500" cy="170" r="25" fill="#DFA372" />
-              <ellipse cx="500" cy="230" rx="35" ry="45" fill="#E21B0F" />
-
-              {/* Arms */}
-              <ellipse
-                cx="460"
-                cy="220"
-                rx="15"
-                ry="50"
-                fill="#DFA372"
-                transform="rotate(-25 460 220)"
-              />
-              <circle cx="430" cy="190" r="12" fill="#DFA372" />
-              <ellipse
-                cx="540"
-                cy="220"
-                rx="15"
-                ry="50"
-                fill="#DFA372"
-                transform="rotate(25 540 220)"
-              />
-              <circle cx="570" cy="200" r="12" fill="#DFA372" />
-
-              {/* Legs & shoes */}
-              <rect x="485" y="275" width="12" height="60" fill="#333333" />
-              <rect x="503" y="275" width="12" height="60" fill="#333333" />
-              <ellipse cx="491" cy="340" rx="12" ry="8" fill="#555555" />
-              <ellipse cx="509" cy="340" rx="12" ry="8" fill="#555555" />
-
-              {/* Face */}
-              <circle cx="495" cy="165" r="3" fill="#333333" />
-              <circle cx="505" cy="165" r="3" fill="#333333" />
-
-              {/* Phone */}
-              <rect x="555" y="195" width="45" height="75" fill="#333333" rx="6" />
-              <rect
-                x="560"
-                y="200"
-                width="35"
-                height="60"
-                fill="#4DB8E8"
-                rx="3"
-              />
-            </svg>
+            <img
+              src="/hero-delivery.jpg"
+              alt="Courier Fastmail entregando paquetes"
+              className="w-full max-w-md rounded-2xl shadow-2xl object-cover"
+            />
           </div>
         </div>
       </div>

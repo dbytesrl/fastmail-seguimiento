@@ -1,145 +1,139 @@
-import Link from "next/link";
-
 export default function TrackingOptions() {
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-50 border-b border-gray-200 py-14 md:py-20">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-fastmail-dark mb-4">
-            ¿Qué tipo de envío buscas consultar?
+        <div className="text-center mb-12">
+          <span className="inline-block bg-fastmail-red text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
+            Seguimiento de Envíos
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-fastmail-dark mb-3">
+            ¿Qué tipo de envío querés consultar?
           </h2>
-          <p className="text-lg text-fastmail-gray">
-            Selecciona el tipo de servicio para hacer seguimiento de tu envío
+          <p className="text-fastmail-gray text-lg">
+            Seleccioná el servicio según el tipo de envío que recibiste
           </p>
         </div>
 
-        {/* Two Column Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Option 1: Paquetería */}
-          <div className="bg-gradient-to-br from-fastmail-light to-white rounded-2xl border-2 border-fastmail-red shadow-lg hover:shadow-xl transition overflow-hidden">
-            <div className="p-8 md:p-10">
-              {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-fastmail-red mb-6 mx-auto">
-                <span className="text-3xl">📦</span>
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-6">
+
+          {/* Card 1 — Paquetería */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            {/* Color bar */}
+            <div className="h-2 bg-fastmail-red w-full" />
+
+            <div className="p-8 flex flex-col flex-1">
+              {/* Icon + title row */}
+              <div className="flex items-center gap-4 mb-5">
+                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-red-50 text-3xl flex-shrink-0">
+                  📦
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-fastmail-dark">Paquetería</h3>
+                  <p className="text-sm text-fastmail-gray">Logística · Distribución</p>
+                </div>
               </div>
 
-              {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-fastmail-dark text-center mb-4">
-                Paquetería
-              </h3>
-
-              {/* Description */}
-              <p className="text-fastmail-gray text-center mb-6 leading-relaxed">
-                Seguimiento de paquetes, cajas y envíos de logística estándar
-              </p>
-
-              {/* Question */}
-              <div className="bg-white border-l-4 border-fastmail-red rounded p-4 mb-8">
-                <p className="text-fastmail-dark font-semibold">
-                  ¿Tenés un número de tracking de paquete?
+              {/* Question callout */}
+              <div className="bg-red-50 border-l-4 border-fastmail-red rounded-lg p-4 mb-6">
+                <p className="text-fastmail-dark font-semibold text-sm">
+                  ¿Tenés un número de tracking de paquete o envío?
                 </p>
-                <p className="text-sm text-fastmail-gray mt-2">
-                  Ingresa tu número FM o de seguimiento para ver el estado en tiempo real
+                <p className="text-fastmail-gray text-xs mt-1">
+                  Consultá el estado en tiempo real con tu número FM
                 </p>
               </div>
 
               {/* Features */}
-              <ul className="space-y-3 mb-8">
-                <li className="flex gap-3 items-start">
-                  <span className="text-fastmail-red font-bold">✓</span>
-                  <span className="text-fastmail-dark">Actualizaciones en tiempo real</span>
+              <ul className="space-y-2 mb-8 text-sm text-fastmail-dark">
+                <li className="flex gap-2 items-center">
+                  <span className="text-fastmail-red font-bold">✓</span> Actualizaciones en tiempo real
                 </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-fastmail-red font-bold">✓</span>
-                  <span className="text-fastmail-dark">Cobertura nacional</span>
+                <li className="flex gap-2 items-center">
+                  <span className="text-fastmail-red font-bold">✓</span> Cobertura nacional
                 </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-fastmail-red font-bold">✓</span>
-                  <span className="text-fastmail-dark">Soporte 24/7</span>
+                <li className="flex gap-2 items-center">
+                  <span className="text-fastmail-red font-bold">✓</span> Seguimiento 24/7
                 </li>
               </ul>
 
-              {/* CTA Button */}
+              {/* CTA */}
               <a
                 href="https://epresislv.fastmail.com.ar/seguimiento"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-fastmail-red text-white font-bold py-3 rounded-lg hover:bg-opacity-90 transition text-center"
+                className="mt-auto block w-full bg-fastmail-red text-white font-bold py-3.5 rounded-xl hover:bg-opacity-90 transition text-center text-sm tracking-wide"
               >
-                Seguir mi paquete
+                Seguir mi paquete →
               </a>
             </div>
           </div>
 
-          {/* Option 2: Postal/Telegramas */}
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl border-2 border-blue-500 shadow-lg hover:shadow-xl transition overflow-hidden">
-            <div className="p-8 md:p-10">
-              {/* Icon */}
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-500 mb-6 mx-auto">
-                <span className="text-3xl">📮</span>
+          {/* Card 2 — Postal / Telegramas */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
+            {/* Color bar */}
+            <div className="h-2 bg-blue-600 w-full" />
+
+            <div className="p-8 flex flex-col flex-1">
+              {/* Icon + title row */}
+              <div className="flex items-center gap-4 mb-5">
+                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-blue-50 text-3xl flex-shrink-0">
+                  📮
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-fastmail-dark">Postal / Telegramas</h3>
+                  <p className="text-sm text-fastmail-gray">Carta documento · Correspondencia</p>
+                </div>
               </div>
 
-              {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold text-fastmail-dark text-center mb-4">
-                Postal / Telegramas
-              </h3>
-
-              {/* Description */}
-              <p className="text-fastmail-gray text-center mb-6 leading-relaxed">
-                Seguimiento de cartas documentos, telegramas y correspondencia postal
-              </p>
-
-              {/* Question */}
-              <div className="bg-white border-l-4 border-blue-500 rounded p-4 mb-8">
-                <p className="text-fastmail-dark font-semibold">
-                  ¿Buscas consultar por telegramas o carta documento?
+              {/* Question callout */}
+              <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-4 mb-6">
+                <p className="text-fastmail-dark font-semibold text-sm">
+                  ¿Buscás consultar por telegramas o carta documento?
                 </p>
-                <p className="text-sm text-fastmail-gray mt-2">
-                  Ingresa aquí para hacer seguimiento de tu correspondencia postal
+                <p className="text-fastmail-gray text-xs mt-1">
+                  Ingresá aquí para rastrear tu correspondencia postal
                 </p>
               </div>
 
               {/* Features */}
-              <ul className="space-y-3 mb-8">
-                <li className="flex gap-3 items-start">
-                  <span className="text-blue-500 font-bold">✓</span>
-                  <span className="text-fastmail-dark">Consulta de cartas documento</span>
+              <ul className="space-y-2 mb-8 text-sm text-fastmail-dark">
+                <li className="flex gap-2 items-center">
+                  <span className="text-blue-600 font-bold">✓</span> Consulta de cartas documento
                 </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-blue-500 font-bold">✓</span>
-                  <span className="text-fastmail-dark">Telegramas certificados</span>
+                <li className="flex gap-2 items-center">
+                  <span className="text-blue-600 font-bold">✓</span> Telegramas certificados
                 </li>
-                <li className="flex gap-3 items-start">
-                  <span className="text-blue-500 font-bold">✓</span>
-                  <span className="text-fastmail-dark">Correspondencia asegurada</span>
+                <li className="flex gap-2 items-center">
+                  <span className="text-blue-600 font-bold">✓</span> Correspondencia asegurada
                 </li>
               </ul>
 
-              {/* CTA Button */}
+              {/* CTA */}
               <a
                 href="https://trackerfmv2.fastmail.com.ar/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-blue-500 text-white font-bold py-3 rounded-lg hover:bg-blue-600 transition text-center"
+                className="mt-auto block w-full bg-blue-600 text-white font-bold py-3.5 rounded-xl hover:bg-blue-700 transition text-center text-sm tracking-wide"
               >
-                Consultar postal/telegramas
+                Consultar postal / telegramas →
               </a>
             </div>
           </div>
+
         </div>
 
-        {/* Bottom Info */}
-        <div className="mt-12 p-6 bg-fastmail-light rounded-lg border border-gray-200">
-          <p className="text-center text-fastmail-gray">
-            <span className="font-semibold text-fastmail-dark">¿Problemas para encontrar tu número de tracking?</span>
-            {" "}
-            <a href="#contacto" className="text-fastmail-red hover:underline font-semibold">
-              Contactanos aquí
-            </a>
-            {" "}y te ayudaremos a ubicarlo.
-          </p>
-        </div>
+        {/* Bottom help */}
+        <p className="text-center text-sm text-fastmail-gray mt-8">
+          ¿No sabés cuál elegir o no encontrás tu número?{" "}
+          <a href="#contacto" className="text-fastmail-red font-semibold hover:underline">
+            Contactanos
+          </a>
+          {" "}y te ayudamos.
+        </p>
+
       </div>
     </section>
   );
