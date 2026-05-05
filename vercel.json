@@ -4,12 +4,8 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "env": {
-    "NEXT_PUBLIC_FORMSPREE_ENDPOINT": {
-      "description": "URL endpoint de Formspree para envío de formularios",
-      "required": false
-    }
+    "NEXT_PUBLIC_FORMSPREE_ID": "mdabgblv"
   },
-  "regions": ["syd1"],
   "git": {
     "deploymentEnabled": {
       "main": true
