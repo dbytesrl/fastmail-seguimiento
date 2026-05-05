@@ -7,9 +7,12 @@ Landing page moderna para Fastmail con formulario integrado a Formspree y seguim
 - ✅ Diseño moderno y responsive
 - ✅ Logo regenerado con identidad visual actualizada
 - ✅ Ilustración hero inspirada en last-mile logistics
+- ✅ **Dos opciones de tracking identificadas:**
+  - 📦 **Paquetería** - Envíos estándar (epresislv.fastmail.com.ar/seguimiento)
+  - 📮 **Postal/Telegramas** - Cartas documento y telegramas (trackerfmv2.fastmail.com.ar/login)
+- ✅ Sección "¿Qué tipo de envío buscas?" con preguntas contextuales
 - ✅ Formulario de contacto integrado con Formspree
-- ✅ Link directo a sistema de seguimiento
-- ✅ Colores corporativos Fastmail (rojo #E21B0F + grises)
+- ✅ Colores corporativos Fastmail (rojo #E21B0F + azul #3B82F6)
 - ✅ Optimizado para SEO y Core Web Vitals
 - ✅ Deploy listo en Vercel
 
