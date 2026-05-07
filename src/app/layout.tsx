@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -18,6 +19,8 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased bg-white text-fastmail-dark">
         {children}
+        <Script src="https://api.clientify.net/web-marketing/webforms/script/145890.js" strategy="afterInteractive" />
+        <Script src="https://api.clientify.net/web-marketing/chatbots/script/168100.js" strategy="afterInteractive" />
       </body>
     </html>
   );
